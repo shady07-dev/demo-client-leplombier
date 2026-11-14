@@ -1,6 +1,6 @@
 # LE PLOMBIER — Site vitrine (v1)
 
-Refonte de https://www.leplombier73.fr/ — HTML/CSS/JS statique, sans build.
+Refonte de site — HTML/CSS/JS statique, sans build.
 
 ## Structure
 
