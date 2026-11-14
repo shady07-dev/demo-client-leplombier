@@ -1,0 +1,104 @@
+/* ==========================================================================
+   PAGE : GARANTIES (garanties.html)
+   ========================================================================== */
+
+/* ---------- Cartes assurance ---------- */
+.insurance {
+  margin-top: calc(-1 * var(--sp-9));
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+.insurance-card {
+  position: relative;
+  padding: var(--sp-7) var(--sp-6);
+  border-radius: var(--r-xl);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+  transition: transform var(--t-med);
+}
+.insurance-card:hover { transform: translateY(-6px); }
+.insurance-card h2 { font-size: var(--fs-xl); margin-block: var(--sp-2) var(--sp-4); }
+.insurance-card > p { margin-bottom: var(--sp-5); }
+
+.insurance-card__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--sp-5);
+  border-radius: var(--r-md);
+  background: var(--g-brand);
+  color: var(--c-white);
+  box-shadow: var(--sh-brand);
+}
+.insurance-card__icon [data-icon] { width: 30px; height: 30px; }
+.insurance-card__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-brand-500);
+}
+
+/* Variante mise en avant (décennale) */
+.insurance-card--featured {
+  background: var(--g-hero);
+  border-color: transparent;
+  color: var(--c-text-invert);
+}
+.insurance-card--featured h2 { color: var(--c-white); }
+.insurance-card--featured p { color: rgba(232, 243, 241, 0.8); }
+.insurance-card--featured strong { color: var(--c-white); }
+.insurance-card--featured .insurance-card__icon { background: var(--g-accent); box-shadow: var(--sh-accent); }
+.insurance-card--featured .insurance-card__label { color: var(--c-brand-300); }
+.insurance-card--featured .check-list li { color: var(--c-text-invert); }
+.insurance-card--featured .check-list [data-icon] { background: rgba(63, 220, 191, 0.15); color: var(--c-brand-300); }
+
+.insurance-card__years {
+  position: absolute;
+  right: var(--sp-5);
+  top: var(--sp-5);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--ff-heading);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.08);
+}
+.insurance-card__years span { font-size: 7rem; }
+.insurance-card__years small { font-size: 2rem; }
+
+/* ---------- Partenaire ---------- */
+.partner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--sp-7);
+  padding: var(--sp-7);
+  border-radius: var(--r-xl);
+  background: linear-gradient(135deg, var(--c-brand-100), var(--c-white));
+  border: 1px solid var(--c-border);
+}
+.partner__logo {
+  display: grid;
+  place-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--c-white);
+  color: var(--c-brand-500);
+  box-shadow: var(--sh-lg);
+  animation: float 6s ease-in-out infinite;
+}
+.partner__logo [data-icon] { width: 72px; height: 72px; }
+.partner__content h2 { margin-bottom: var(--sp-4); font-size: var(--fs-xl); }
+
+@media (max-width: 760px) {
+  .partner { grid-template-columns: 1fr; text-align: center; padding: var(--sp-6); }
+  .partner__logo { margin-inline: auto; width: 120px; height: 120px; }
+  .partner__logo [data-icon] { width: 54px; height: 54px; }
+}

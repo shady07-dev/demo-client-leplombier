@@ -1,0 +1,61 @@
+/* ==========================================================================
+   ACCORDION — FAQ dépliable
+   ========================================================================== */
+
+.accordion {
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.accordion__item {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-white);
+  overflow: hidden;
+  transition: box-shadow var(--t-med), border-color var(--t-med);
+}
+.accordion__item.is-open {
+  border-color: rgba(1, 160, 135, 0.35);
+  box-shadow: var(--sh-md);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  width: 100%;
+  padding: var(--sp-5);
+  text-align: left;
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--c-dark-800);
+}
+.accordion__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c-brand-100);
+  color: var(--c-brand-500);
+  flex-shrink: 0;
+  transition: transform var(--t-med), background var(--t-med), color var(--t-med);
+}
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(180deg);
+  background: var(--c-brand-500);
+  color: var(--c-white);
+}
+
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--t-med);
+}
+.accordion__item.is-open .accordion__panel { grid-template-rows: 1fr; }
+.accordion__content { overflow: hidden; }
+.accordion__content p { padding: 0 var(--sp-5) var(--sp-5); }

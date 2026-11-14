@@ -1,0 +1,86 @@
+/* ==========================================================================
+   VARIABLES — Design tokens (couleurs, typo, espacements, ombres)
+   ========================================================================== */
+
+:root {
+  /* Couleurs de marque — vert turquoise du logo d'origine (#01B598) */
+  --c-dark-900: #061413;
+  --c-dark-800: #0b211f;
+  --c-dark-700: #12332f;
+  --c-brand-700: #017a67;
+  --c-brand-600: #008f78;
+  --c-brand-500: #01b598;
+  --c-brand-300: #3fdcbf;
+  --c-brand-100: #e2f7f3;
+  --c-accent-500: #ff7a1a;
+  --c-accent-600: #e9650a;
+  --c-accent-100: #fff1e6;
+  --c-success: #16a34a;
+  --c-danger: #dc2626;
+
+  /* Neutres */
+  --c-white: #ffffff;
+  --c-bg: #f4f8f7;
+  --c-surface: #ffffff;
+  --c-border: #dfe9e6;
+  --c-text: #13221f;
+  --c-text-muted: #566965;
+  --c-text-invert: #e8f3f1;
+
+  /* Dégradés */
+  --g-hero: radial-gradient(1200px 600px at 85% -10%, rgba(63, 220, 191, 0.28), transparent 60%),
+            radial-gradient(900px 500px at -10% 110%, rgba(1, 160, 135, 0.35), transparent 60%),
+            linear-gradient(160deg, var(--c-dark-900) 0%, var(--c-dark-800) 55%, var(--c-dark-700) 100%);
+  --g-brand: linear-gradient(135deg, var(--c-brand-600), var(--c-brand-500));
+  --g-brand-text: linear-gradient(135deg, var(--c-brand-600), var(--c-brand-500) 60%, var(--c-brand-300));
+  --g-accent: linear-gradient(135deg, var(--c-accent-500), #ffa04d);
+
+  /* Typographie */
+  --ff-heading: "Outfit", system-ui, sans-serif;
+  --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);
+  --fs-2xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --fs-3xl: clamp(2.4rem, 1.5rem + 3.6vw, 4rem);
+
+  /* Espacements */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 76px;
+
+  /* Rayons */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+  --r-full: 999px;
+
+  /* Ombres */
+  --sh-sm: 0 1px 2px rgba(7, 26, 26, 0.06), 0 2px 6px rgba(7, 26, 26, 0.05);
+  --sh-md: 0 6px 20px rgba(7, 26, 26, 0.08);
+  --sh-lg: 0 20px 50px rgba(7, 26, 26, 0.14);
+  --sh-accent: 0 10px 30px rgba(255, 122, 26, 0.35);
+  --sh-brand: 0 10px 30px rgba(1, 160, 135, 0.3);
+
+  /* Transitions */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.2s var(--ease);
+  --t-med: 0.4s var(--ease);
+  --t-slow: 0.8s var(--ease);
+}

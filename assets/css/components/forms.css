@@ -1,0 +1,100 @@
+/* ==========================================================================
+   FORMS — Champs de formulaire et états de validation
+   ========================================================================== */
+
+.form {
+  display: grid;
+  gap: var(--sp-5);
+}
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+@media (max-width: 620px) {
+  .form__row { grid-template-columns: 1fr; }
+}
+
+.field {
+  display: grid;
+  gap: var(--sp-2);
+}
+.field__label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-dark-800);
+}
+.field__label .req { color: var(--c-accent-500); }
+
+.field__input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-bg);
+  font-size: var(--fs-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+.field__input::placeholder { color: #9aa8bb; }
+.field__input:hover { border-color: #c9d4e3; }
+.field__input:focus {
+  outline: none;
+  border-color: var(--c-brand-500);
+  background: var(--c-white);
+  box-shadow: 0 0 0 4px rgba(1, 160, 135, 0.12);
+}
+textarea.field__input { min-height: 140px; resize: vertical; }
+select.field__input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%235a6a80' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.75rem;
+}
+
+.field__error {
+  min-height: 1em;
+  font-size: var(--fs-xs);
+  color: var(--c-danger);
+}
+.field.is-invalid .field__input {
+  border-color: var(--c-danger);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+}
+.field.is-valid .field__input { border-color: var(--c-success); }
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+  cursor: pointer;
+}
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--c-brand-500);
+  flex-shrink: 0;
+}
+
+.form__status {
+  display: none;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+.form__status.is-success {
+  display: flex;
+  background: #e8f7ee;
+  color: #11602f;
+}
+.form__status.is-error {
+  display: flex;
+  background: #fdecec;
+  color: #8f1d1d;
+}

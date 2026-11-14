@@ -1,0 +1,85 @@
+/* ==========================================================================
+   BUTTONS — Boutons et liens d'action
+   ========================================================================== */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--r-full);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--t-fast), box-shadow var(--t-med), background var(--t-med), color var(--t-fast);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn [data-icon] { transition: transform var(--t-med); }
+.btn:hover [data-icon="arrow-right"] { transform: translateX(4px); }
+
+/* Effet de brillance au survol */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.7s var(--ease);
+}
+.btn:hover::before { transform: translateX(100%); }
+
+.btn--primary {
+  background: var(--g-brand);
+  color: var(--c-white);
+  box-shadow: var(--sh-brand);
+}
+.btn--primary:hover { box-shadow: 0 14px 36px rgba(1, 160, 135, 0.45); }
+
+/* Variante orange réservée aux urgences */
+.btn--accent {
+  background: var(--g-accent);
+  color: var(--c-white);
+  box-shadow: var(--sh-accent);
+}
+
+.btn--brand {
+  background: var(--g-brand);
+  color: var(--c-white);
+  box-shadow: var(--sh-brand);
+}
+
+.btn--outline {
+  border: 2px solid var(--c-border);
+  color: var(--c-dark-800);
+  background: var(--c-white);
+}
+.btn--outline:hover { border-color: var(--c-brand-500); color: var(--c-brand-600); }
+
+.btn--ghost-light {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: var(--c-white);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+}
+.btn--ghost-light:hover { background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.5); }
+
+.btn--lg { padding: 1.05rem 1.9rem; font-size: var(--fs-base); }
+.btn--sm { padding: 0.6rem 1.1rem; font-size: var(--fs-xs); }
+.btn--block { width: 100%; }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-weight: 600;
+  color: var(--c-brand-600);
+}
+.link-arrow [data-icon] { transition: transform var(--t-med); }
+.link-arrow:hover [data-icon] { transform: translateX(5px); }

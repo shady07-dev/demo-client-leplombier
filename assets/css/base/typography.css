@@ -1,0 +1,56 @@
+/* ==========================================================================
+   TYPOGRAPHY — Styles de texte globaux
+   ========================================================================== */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--c-dark-800);
+}
+
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-lg); }
+h4 { font-size: var(--fs-md); }
+
+p {
+  color: var(--c-text-muted);
+}
+
+strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+.text-gradient {
+  background: var(--g-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-accent {
+  color: var(--c-accent-500);
+}
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--c-brand-300);
+  color: var(--c-dark-900);
+}
